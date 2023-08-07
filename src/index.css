@@ -1,0 +1,189 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  color: rgba(255, 255, 255, 0.87);
+  /* background-color: #242424; */
+}
+
+/* page 404 */
+
+.alert
+{
+    background-color: rgb(255, 255, 255);
+}
+
+.swal-overlay 
+{
+  background-color: rgba(111, 0, 121, 0.327);
+}
+
+.swal-modal 
+{
+}
+
+.swal-title 
+{
+    margin: 0px;
+    box-shadow: 0px 1px 1px rgba(7, 7, 7, 0.21);
+    color: rgb(83, 0, 121);
+    font-weight: bold;
+    margin-bottom: 28px;
+}
+
+.swal-text 
+{
+    padding: 17px;
+    display: block;
+    margin: 22px;
+    text-align: center;
+    color: #555555;
+    font-weight: bold;
+}
+
+.swal-button 
+{
+    padding: 7px 19px;
+    border-radius: 2px;
+    background-color: rgb(83, 0, 121);
+}
+
+.swal-button:hover
+{
+    padding: 7px 19px;
+    border-radius: 2px;
+    background-color: rgb(176, 6, 255)!important;
+    transform: scale(1.1);
+}
+
+.swal-icon
+{
+    color: rgb(83, 0, 121);
+}
+/* page 404 */
+
+
+/* Responsive Phone*/
+
+
+@media screen and (max-width: 767px)
+{
+
+/* Header */
+.navElement
+{
+    gap:0 !important;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2% !important;
+}
+
+.navSecondElement
+{
+    flex-direction: column !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.tiktokLink
+{
+    margin-top: 5% !important;
+    margin-bottom: 5% !important;
+}
+
+.logo
+{
+    height: 7rem !important;
+    margin-left: 0 !important;
+}
+
+.nav-text
+{
+    margin-left: 7%;
+    margin-right:3%;
+}
+
+p
+{
+    margin-left: 3%;
+    margin-right:3%;
+    text-align: center;
+    
+}
+/* Header */
+
+/* Index filter image */
+.filterBar
+{
+    flex-direction: column;
+}
+
+.filterTitle
+{
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+.picdic
+{
+    width: 90% !important;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+/* Index filter image */
+
+/* Details */
+
+.detailsBloc
+{
+    flex-wrap: wrap;
+}
+
+.picdic2
+{
+    width: 90% !important;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.detailsDiv
+{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 0 !important;
+    margin-bottom: 5% !important;
+}
+
+.detailsLinkPic
+{
+    flex-direction: column;
+    margin-left: 0 !important;
+
+}
+
+.pic2
+{
+    width: 90%;
+}
+
+h2
+{
+    margin-top:5%;
+}
+
+.pic, .picdic
+{
+    height: 26rem;
+}
+
+.titleAnime
+{
+    text-align: center;
+    margin-top: 3%;
+}
+}

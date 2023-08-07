@@ -1,0 +1,34 @@
+.pic:hover
+{
+    filter: drop-shadow(0 0 2em #b200f9aa);
+    transform: scale(1.2);
+    height: 20rem;
+}
+
+.flw-text:hover
+{
+    filter: drop-shadow(0 0 2em #b200f9aa);
+}
+
+.flw-text
+{
+    transition: filter 1s;
+}
+
+.pic, .picdiv
+{
+    transition: filter 1s;
+    transition: transform 1s;
+    transition: height 1s;
+}
+
+.btn
+{
+    transition: background-color 1s;
+    transition: filter 1s;
+}
+
+.btn:hover
+{
+    filter: drop-shadow(0 0 2em #b200f9aa);
+}

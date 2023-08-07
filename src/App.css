@@ -1,0 +1,25 @@
+.logo:hover, .nav-text:hover, input:hover
+{
+  filter: drop-shadow(0 0 2em #b200f9aa);
+  color: purple;
+}
+
+.logo
+{
+  filter: drop-shadow(0 0 2em #b200f9aa);
+}
+
+.logo, .nav-text, input
+{
+  transition: filter 1s;
+  transition: color 1.5s;
+}
+
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
