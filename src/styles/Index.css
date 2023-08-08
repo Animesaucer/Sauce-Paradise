@@ -32,3 +32,36 @@
 {
     filter: drop-shadow(0 0 2em #b200f9aa);
 }
+
+/* Pagination style */
+
+.paginationBtns
+{
+    width: 80%;
+    height: 40px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.paginationBtns a
+{
+    padding: 10px;
+    margin: 8px;
+    border-radius: 5px;
+    border: 1px solid #b200f9aa;
+    color: #b200f9aa;
+    cursor: pointer;
+}
+
+.paginationBtns a:hover
+{
+    color: white;
+    background-color: #b200f9aa;
+}
+
+.paginationActive a
+{
+    color: white;
+    background-color: #b200f9aa;
+}

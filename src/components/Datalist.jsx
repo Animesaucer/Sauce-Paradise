@@ -4,16 +4,17 @@ import {imagesList} from './../data/imagesList'
 import {Link} from "react-router-dom"
 import {useState} from "react"
 import {Route, useNavigate} from 'react-router-dom';
-
+import ReactPaginate from 'react-paginate';
 import { FaRandom } from 'react-icons/fa';
 
 export default function datalist() 
 {
-
     var [displayedImages, setDisplayedProjects] = useState(imagesList.reverse());
+    var [filterActive, setfilterActive] = useState(false);
     var [isRandomClick, setisRandomClick] = useState(false);
 
-    function shuffle(array) {
+    function shuffle(array) 
+    {
         let currentIndex = array.length,  randomIndex;
 
         // While there remain elements to shuffle.
@@ -29,20 +30,22 @@ export default function datalist()
         }
 
         return array;
-        }
+    }
 
     const animeChange = (anime) => {
 
     anime = anime.target.value; 
-    var filteredAnime = imagesList.reverse().filter( pic =>  pic.anime.includes(anime.toLowerCase()) === true  )
-    setDisplayedProjects(filteredAnime.reverse())
+    var filteredAnime = imagesList.reverse().filter( pic =>  pic.anime.includes(anime.toLowerCase()) === true  );
+    setDisplayedProjects(filteredAnime.reverse());
+    setfilterActive(true);
     }
 
     const characterChange = (character) => {
 
     character = character.target.value;
-    var filteredCharacter = imagesList.reverse().filter( pic => pic.character.includes(character.toLowerCase()) === true  )
-    setDisplayedProjects(filteredCharacter.reverse())
+    var filteredCharacter = imagesList.reverse().filter( pic => pic.character.includes(character.toLowerCase()) === true  );
+    setDisplayedProjects(filteredCharacter.reverse());
+    setfilterActive(true);
     }
 
 
@@ -55,27 +58,51 @@ export default function datalist()
 
         if (isRandomClick === false) 
         {
-            setisRandomClick(true)
+            setisRandomClick(true);
         }
         else if (isRandomClick === true)
         {
-            setisRandomClick(false)
+            setisRandomClick(false);
         }
+        setfilterActive(true);
+    }
+
+    const navigate = useNavigate();
+
+    const redirectAnimePic = (allAnime) => 
+    {
+        var animeId = allAnime.target.id; 
+        var path = "/Details/" + animeId;
+        navigate(path);
+
+        const element = document.getElementById('header');            
+        element.scrollIntoView({ behavior: 'smooth' });
     }
 
 
-        const navigate = useNavigate();
+     /* Pagination */
 
-        const redirectAnimePic = (allAnime) => 
-        {
-            var animeId = allAnime.target.id; 
-            var path = "/Details/" + animeId
-            navigate(path)
+    const [pageNumber, setPageNumber] = useState(0);
+    const imagesPerPage = 8;
+    const pagesVisited = pageNumber * imagesPerPage;
 
-            const element = document.getElementById('header');            
-            element.scrollIntoView({ behavior: 'smooth' });
-        }
+    const displayPictures = displayedImages.slice(pagesVisited, pagesVisited + imagesPerPage).map((picture) => {
+        return(
+            <div className='picdic w-[16%] h-60' key={picture.id}>
+                <img onClick={redirectAnimePic} id={picture.id} src={picture.image} alt={picture.title} className='pic cursor-pointer h-72 w-[100%] rounded-xl object-cover' loading='lazy'></img>
+            </div>
+        );
+    });
 
+    const pageCount = Math.ceil(imagesList.length / imagesPerPage);
+
+    const changePage = ({selected}) =>{
+        setPageNumber(selected);
+        const element = document.getElementById('displayedPics');            
+        element.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    /* Pagination */
 
 	return  (
         <main className='flex flex-col'>
@@ -123,14 +150,20 @@ export default function datalist()
             </div>
 
 
-            <section className="flex flex-row justify-center gap-24 flex-wrap w-[80%] mr-[10%] ml-[10%] mt-[5%] mb-[10%]">
-                {displayedImages.map((picture) => 
-                    (
-                        <div className='picdic w-[16%] h-60' key={picture.id}>
-                                <img onClick={redirectAnimePic} id={picture.id} src={picture.image} alt={picture.title} className='pic cursor-pointer h-72 w-[100%] rounded-xl object-cover' loading='lazy'></img>
-                        </div>
-                    ))
-                }
+            <section className="flex flex-row justify-center gap-24 flex-wrap w-[80%] mr-[10%] ml-[10%] mt-[5%] mb-[10%]" id="displayedPics">
+                {displayPictures}
+                <ReactPaginate
+                    previousLabel={"Previous"}
+                    nextLabel={"Next"}  
+                    pageCount={pageCount}
+                    onPageChange={changePage}
+                    containerClassName={'paginationBtns'}
+                    previousLinkClassName={'previousBtn'}
+                    nextLinkClassName={'nextBtn'}
+                    disabledClassName={'paginationDisabled'}
+                    activeClassName={'paginationActive'}
+                    className={filterActive ? 'hidden' : ''}
+                />
             </section>
 
         </main>
