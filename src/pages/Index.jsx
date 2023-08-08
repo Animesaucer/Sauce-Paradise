@@ -1,4 +1,4 @@
-import '../styles/Accueil.css'
+import '../styles/Index.css'
 import Datalist from '../components/Datalist'
 
 export default function Index() 

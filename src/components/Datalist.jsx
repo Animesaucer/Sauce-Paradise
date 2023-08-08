@@ -1,29 +1,67 @@
-import '../styles/Accueil.css'
+import '../styles/index.css'
 
 import {imagesList} from './../data/imagesList'
 import {Link} from "react-router-dom"
 import {useState} from "react"
 import {Route, useNavigate} from 'react-router-dom';
 
+import { FaRandom } from 'react-icons/fa';
 
 export default function datalist() 
 {
 
-    var [displayedImages, setDisplayedProjects] = useState(imagesList);
+    var [displayedImages, setDisplayedProjects] = useState(imagesList.reverse());
+    var [isRandomClick, setisRandomClick] = useState(false);
+
+    function shuffle(array) {
+        let currentIndex = array.length,  randomIndex;
+
+        // While there remain elements to shuffle.
+        while (currentIndex != 0) {
+
+            // Pick a remaining element.
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+
+            // And swap it with the current element.
+            [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
+        }
+
+        return array;
+        }
 
     const animeChange = (anime) => {
 
-        anime = anime.target.value; 
-
-        setDisplayedProjects(imagesList.filter( pic =>  pic.anime.includes(anime.toLowerCase()) === true  ))
-        }
+    anime = anime.target.value; 
+    var filteredAnime = imagesList.reverse().filter( pic =>  pic.anime.includes(anime.toLowerCase()) === true  )
+    setDisplayedProjects(filteredAnime.reverse())
+    }
 
     const characterChange = (character) => {
 
-        character = character.target.value;
+    character = character.target.value;
+    var filteredCharacter = imagesList.reverse().filter( pic => pic.character.includes(character.toLowerCase()) === true  )
+    setDisplayedProjects(filteredCharacter.reverse())
+    }
 
-        setDisplayedProjects(imagesList.filter( pic =>  pic.character.includes(character.toLowerCase()) === true  ))
+
+    var getRandomPics = () => {
+        var filteredRandomAnime = imagesList;
+        
+        shuffle(filteredRandomAnime);
+        filteredRandomAnime.length = Math.min(filteredRandomAnime.length, 8);
+        setDisplayedProjects(filteredRandomAnime);
+
+        if (isRandomClick === false) 
+        {
+            setisRandomClick(true)
         }
+        else if (isRandomClick === true)
+        {
+            setisRandomClick(false)
+        }
+    }
 
 
         const navigate = useNavigate();
@@ -40,8 +78,8 @@ export default function datalist()
 
 
 	return  (
-        <div className='flex flex-col'>
-            <div className='filterBar flex flex-row justify-between w-[80%] mr-[10%] ml-[10%]'>
+        <main className='flex flex-col'>
+            <section className='filterBar flex flex-row justify-between w-[80%] mr-[10%] ml-[10%]'>
                 <div>
                     <div className="filterTitle flex flex-col items-center">
                         <label htmlFor="anime-choice" className='mb-5'>Filter by anime / Manwha</label>
@@ -55,7 +93,7 @@ export default function datalist()
                         <option value="Naruto"></option>
                         <option value="Chainsaw-man"></option>
                         <option value="One punch man"></option>
-                        <option value="Bleach"></option>
+                        <option value="spy family"></option>
                         <option value="Black clover"></option>
                     </datalist>
                 </div>
@@ -73,21 +111,29 @@ export default function datalist()
                         <option value="Hancock"></option>
                         <option value="Makima"></option>
                         <option value="Fubuki"></option>
+                        <option value="Yor"></option>
                     </datalist>
                 </div>
+            </section>
+
+            <div className="flex justify-center items-center">
+                <button onClick={getRandomPics} className="btn mt-[3%] bg-purple-500 hover:bg-purple-700  font-bold py-2 px-4 rounded-xl inline-flex items-center w-[15%] ">
+                    <FaRandom/><span className='text-center ml-[3%]'>Randomizer button</span>
+                </button>
             </div>
 
-            <div className="flex flex-row justify-center gap-24 flex-wrap w-[80%] mr-[10%] ml-[10%] mt-[5%] mb-[10%]">
+
+            <section className="flex flex-row justify-center gap-24 flex-wrap w-[80%] mr-[10%] ml-[10%] mt-[5%] mb-[10%]">
                 {displayedImages.map((picture) => 
                     (
-                        <div className='picdic w-[19%] h-60' key={picture.id}>
+                        <div className='picdic w-[16%] h-60' key={picture.id}>
                                 <img onClick={redirectAnimePic} id={picture.id} src={picture.image} alt={picture.title} className='pic cursor-pointer h-72 w-[100%] rounded-xl object-cover' loading='lazy'></img>
                         </div>
                     ))
                 }
-            </div>
+            </section>
 
-        </div>
+        </main>
 )
 }
 

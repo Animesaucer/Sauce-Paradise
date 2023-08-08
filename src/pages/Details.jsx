@@ -6,7 +6,7 @@ import swal from 'sweetalert';
 
 import {Route, useNavigate} from 'react-router-dom';
 
-import '../styles/Accueil.css'
+import '../styles/Index.css'
 
 export default function Details()
 {
@@ -66,7 +66,7 @@ export default function Details()
             autorKnown = false;
         }
 
-        if ( anime === 'Hanime' || anime === 'H-Manga')
+        if ( anime === 'hanime' || anime === 'h-manga')
         {
             isAnH = true;
         }
@@ -103,14 +103,18 @@ export default function Details()
 
 
             var randomCharacter = listImages.filter(picture => picture.character === characterName && picture.id != picId)
-
             shuffle(randomCharacter);
             randomCharacter.length = Math.min(randomCharacter.length, 4)
-
             var otherCharacter = true;
             if (randomCharacter.length === 0)
             {
                 otherCharacter = false;
+            }
+
+            var authorH = false;
+            if (authorLength  === 0 && isAnH  === false)
+            {
+                authorH = true;
             }
 
             var randomAllAnime = listImages.filter(picture => picture.id != picId)
@@ -118,7 +122,7 @@ export default function Details()
             shuffle(randomAllAnime);
             randomAllAnime.length = Math.min(randomAllAnime.length, 4)
 
-        return <div className='flex flex-col justify-center  w-[100%] mt-[5%]' id='imageDetails'>
+        return <section className='flex flex-col justify-center  w-[100%] mt-[5%]' id='imageDetails'>
 
                     {listImages.filter(picture => picture.id === params.id).map((filteredPic,index) =>
 
@@ -131,7 +135,7 @@ export default function Details()
                                 <Link to={filteredPic.authorlink} target="blank" className="flw-text  mt-[5%]">Link to the creator of this picture <br/><span className="flw-text text-purple-500 font-bold">Follow and support him click here</span></Link>
                             </div>
                         }
-                        { autorKnown  === false &&
+                        { authorH  === true &&
                             <div className="detailsDiv w-[30%] ml-[5%] mr-[5%]">
                                 <Link to="https://www.tiktok.com/@animesaucer_" target="blank" className="flw-text  mt-[5%]">Creator unknown, if you know who made this image contact me <span className="flw-text text-purple-500 font-bold">here</span> to credit him</Link>
                             </div>
@@ -171,7 +175,7 @@ export default function Details()
                 <div className={otherCharacter ? "flex flex-row justify-center gap-24 flex-wrap w-[80%] mr-[10%] ml-[10%] mt-[5%] mb-[10%]" : "hidden flex-row justify-center gap-24 flex-wrap w-[80%] mr-[10%] ml-[10%] mt-[5%] mb-[10%]"}>
                 {randomCharacter.map((filteredPic) =>
                     (
-                        <div className='picdic w-[19%] h-60' key={filteredPic.id} onClick={redirectAnimePic}>
+                        <div className='picdic w-[16%] h-60' key={filteredPic.id} onClick={redirectAnimePic}>
                                 <img id={filteredPic.id} src={filteredPic.image} alt={filteredPic.title} className='pic cursor-pointer h-72 w-[100%] rounded-xl object-cover' loading='lazy'></img>
                         </div>
                     ))
@@ -184,7 +188,7 @@ export default function Details()
                 <div className={otherAnime ? "flex flex-row cursor-pointer justify-center gap-24 flex-wrap w-[80%] mr-[10%] ml-[10%] mt-[5%] mb-[10%]" : "hidden cursor-pointer flex-row justify-center gap-24 flex-wrap w-[80%] mr-[10%] ml-[10%] mt-[5%] mb-[10%]"}>
                 {randomAnime.map((filteredPic) =>
                     (
-                        <div className='picdic w-[19%] h-60' key={filteredPic.id} onClick={redirectAnimePic}>
+                        <div className='picdic w-[16%] h-60' key={filteredPic.id} onClick={redirectAnimePic}>
                                 <img id={filteredPic.id} src={filteredPic.image} alt={filteredPic.title} className='pic cursor-pointer h-72 w-[100%] rounded-xl object-cover' loading='lazy'></img>
                         </div>
                     ))
@@ -195,13 +199,13 @@ export default function Details()
                 <div className="flex flex-row justify-center gap-24 flex-wrap w-[80%] mr-[10%] ml-[10%] mt-[5%] mb-[10%]">
                 {randomAllAnime.map((filteredPic) =>
                     (
-                        <div className='picdic w-[19%] h-60' key={filteredPic.id} onClick={redirectAnimePic}>
+                        <div className='picdic w-[16%] h-60' key={filteredPic.id} onClick={redirectAnimePic}>
                                 <img id={filteredPic.id} src={filteredPic.image} alt={filteredPic.title} className='pic cursor-pointer h-72 w-[100%] rounded-xl object-cover' loading='lazy'></img>
                         </div>
                     ))
                 }
                 </div>
 
-                </div>
+                </section>
 }
 

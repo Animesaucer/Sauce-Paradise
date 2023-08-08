@@ -65,6 +65,10 @@
 /* page 404 */
 
 
+.svg-icon
+{
+    color: white;
+}
 /* Responsive Phone*/
 
 
@@ -157,6 +161,7 @@ p
     flex-direction: column;
     margin-left: 0 !important;
     margin-bottom: 5% !important;
+    margin-top: 10% !important;
 }
 
 .detailsLinkPic
@@ -185,5 +190,33 @@ h2
 {
     text-align: center;
     margin-top: 3%;
+}
+/**/
+
+/* Contact page */
+
+.contact-bloc
+{
+    margin-top:60%;
+}
+
+.contact-p
+{
+    text-align: justify;
+}
+
+.contact-div
+{
+    margin-right: 10%;
+}
+
+.contact-links
+{
+    flex-direction: column;
+}
+
+.footer
+{
+    margin-top:40%;
 }
 }
