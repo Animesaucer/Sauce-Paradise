@@ -37,14 +37,14 @@ export default function Header()
 
                         </a>
 
-                        <a href="/Contact" className='flex flex-col'>
+                        <Link to="/Contact" className='flex flex-col'>
                                 <p>Need a website ? I may be able to help you, details <span className=' text-purple-500'>here</span> </p>
 
                                 <div className='flex flex-col justify-center items-center mt-[5%]'>
                                         <FaReact/>
                                 </div>
 
-                        </a>
+                        </Link>
                 </div>
 
 

@@ -9,9 +9,10 @@ import { FaRandom } from 'react-icons/fa';
 
 export default function datalist() 
 {
-    var [displayedImages, setDisplayedProjects] = useState(imagesList.reverse());
+    const listImgs = imagesList.sort((a,b)=>b.number - a.number);
+    var [displayedImages, setDisplayedProjects] = useState(listImgs);
     var [filterActive, setfilterActive] = useState(false);
-    var [isRandomClick, setisRandomClick] = useState(false);
+    // var [isRandomClick, setisRandomClick] = useState(false);
 
     function shuffle(array) 
     {
@@ -49,23 +50,21 @@ export default function datalist()
     }
 
 
-    var getRandomPics = () => {
-        var filteredRandomAnime = imagesList;
+    // var getRandomPics = () => {
         
-        shuffle(filteredRandomAnime);
-        filteredRandomAnime.length = Math.min(filteredRandomAnime.length, 8);
-        setDisplayedProjects(filteredRandomAnime);
+    //     shuffle(displayedImages);
+    //     setDisplayedProjects(displayedImages);
 
-        if (isRandomClick === false) 
-        {
-            setisRandomClick(true);
-        }
-        else if (isRandomClick === true)
-        {
-            setisRandomClick(false);
-        }
-        setfilterActive(true);
-    }
+    //     if (isRandomClick === false) 
+    //     {
+    //         setisRandomClick(true);
+    //     }
+    //     else if (isRandomClick === true)
+    //     {
+    //         setisRandomClick(false);
+    //     }
+    //     setfilterActive(true);
+    // }
 
     const navigate = useNavigate();
 
@@ -135,6 +134,7 @@ export default function datalist()
                     <datalist id="character-select">
                         <option value="Nami"></option>
                         <option value="Robin"></option>
+                        <option value="Yamato"></option>
                         <option value="Hancock"></option>
                         <option value="Makima"></option>
                         <option value="Fubuki"></option>
@@ -143,11 +143,11 @@ export default function datalist()
                 </div>
             </section>
 
-            <div className="flex justify-center items-center">
+            {/* <div className="flex justify-center items-center">
                 <button onClick={getRandomPics} className="btn mt-[3%] bg-purple-500 hover:bg-purple-700  font-bold py-2 px-4 rounded-xl inline-flex items-center w-[15%] ">
                     <FaRandom/><span className='text-center ml-[3%]'>Randomizer button</span>
                 </button>
-            </div>
+            </div> */}
 
 
             <section className="flex flex-row justify-center gap-24 flex-wrap w-[80%] mr-[10%] ml-[10%] mt-[5%] mb-[10%]" id="displayedPics">
