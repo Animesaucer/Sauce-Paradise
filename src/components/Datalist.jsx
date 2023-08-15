@@ -5,14 +5,16 @@ import {Link} from "react-router-dom"
 import {useState} from "react"
 import {Route, useNavigate} from 'react-router-dom';
 import ReactPaginate from 'react-paginate';
+
 import { FaRandom } from 'react-icons/fa';
+import { FaArrowsRotate } from 'react-icons/fa6';
 
 export default function datalist() 
 {
     const listImgs = imagesList.sort((a,b)=>b.number - a.number);
     var [displayedImages, setDisplayedProjects] = useState(listImgs);
     var [filterActive, setfilterActive] = useState(false);
-    // var [isRandomClick, setisRandomClick] = useState(false);
+    var [isRandomClick, setisRandomClick] = useState(false);
 
     function shuffle(array) 
     {
@@ -50,21 +52,36 @@ export default function datalist()
     }
 
 
-    // var getRandomPics = () => {
+    var getRandomPics = () => {
         
-    //     shuffle(displayedImages);
-    //     setDisplayedProjects(displayedImages);
+        var allPics = imagesList;
+        var filteredRandomAnime = [];
 
-    //     if (isRandomClick === false) 
-    //     {
-    //         setisRandomClick(true);
-    //     }
-    //     else if (isRandomClick === true)
-    //     {
-    //         setisRandomClick(false);
-    //     }
-    //     setfilterActive(true);
-    // }
+        filteredRandomAnime.push(allPics);
+        shuffle(filteredRandomAnime[0]);
+        filteredRandomAnime[0].slice(7);
+
+        setDisplayedProjects([...filteredRandomAnime[0]]);
+
+        if (isRandomClick === false) 
+        {
+            setisRandomClick(true);
+        }
+        else if (isRandomClick === true)
+        {
+            setisRandomClick(false);
+        }
+        setfilterActive(true);
+    }
+
+    var getAllPics = () => {
+        
+        var allPics = imagesList;
+
+        setDisplayedProjects([...allPics]);
+
+        setfilterActive(false);
+    }
 
     const navigate = useNavigate();
 
@@ -88,7 +105,7 @@ export default function datalist()
     const displayPictures = displayedImages.slice(pagesVisited, pagesVisited + imagesPerPage).map((picture) => {
         return(
             <div className='picdic w-[16%] h-60' key={picture.id}>
-                <img onClick={redirectAnimePic} id={picture.id} src={picture.image} alt={picture.title} className='pic cursor-pointer h-72 w-[100%] rounded-xl object-cover' loading='lazy'></img>
+                <img onClick={redirectAnimePic} id={picture.id} src={picture.imagelink} alt={picture.title} className='pic cursor-pointer h-72 w-[100%] rounded-xl object-cover' loading='lazy'></img>
             </div>
         );
     });
@@ -127,7 +144,7 @@ export default function datalist()
                 <div>
                     <div className="filterTitle flex flex-col items-center">
                         <label htmlFor="character-choice" className='mb-5'>Filter by character</label>
-                        <input list="character-select" id="character-choice" name="character-choice" className='text-black  rounded-full' onChange={characterChange}/>
+                        <input list="character-select" id="character-choice" name="character-choice" className='text-black  rounded-full text-center' onChange={characterChange}/>
 
                     </div>
 
@@ -143,11 +160,15 @@ export default function datalist()
                 </div>
             </section>
 
-            {/* <div className="flex justify-center items-center">
+            <div className="flex justify-center items-center gap-[3%]">
                 <button onClick={getRandomPics} className="btn mt-[3%] bg-purple-500 hover:bg-purple-700  font-bold py-2 px-4 rounded-xl inline-flex items-center w-[15%] ">
                     <FaRandom/><span className='text-center ml-[3%]'>Randomizer button</span>
                 </button>
-            </div> */}
+
+                <button onClick={getAllPics} className="btn mt-[3%] bg-purple-500 hover:bg-purple-700  font-bold py-2 px-4 rounded-xl inline-flex items-center w-[15%] ">
+                    <FaArrowsRotate/><span className='text-center ml-[3%]'>Reinitialize button</span>
+                </button>
+            </div> 
 
 
             <section className="flex flex-row justify-center gap-24 flex-wrap w-[80%] mr-[10%] ml-[10%] mt-[5%] mb-[10%]" id="displayedPics">
@@ -165,6 +186,7 @@ export default function datalist()
                     className={filterActive ? 'hidden' : ''}
                 />
             </section>
+
 
         </main>
 )

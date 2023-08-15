@@ -27,7 +27,7 @@ export default function Contact()
                     </div>
                     <div className="flex flex-col justify-center items-center">
                         <p className='flex text-purple-500'>Tik Tok  </p>
-                        <a href="https://www.tiktok.com/@animesaucer_" target='blank'  className="flex"> https://www.tiktok.com/@animesaucer_  </a>
+                        <a href="https://www.tiktok.com/@animesaucer2" target='blank'  className="flex"> https://www.tiktok.com/@animesaucer2  </a>
                     </div>
                 </div>
 

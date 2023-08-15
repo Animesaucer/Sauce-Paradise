@@ -2,13 +2,14 @@ export const imagesList =
 [
     {
 		"id": "img1",
-		"title": "Yor in green",
-		"image": "https://avatars.mds.yandex.net/get-images-cbir/4581269/ef1rgFXrXxP_NYZsa73esg5811/ocr",		
+		"title": "Yor in underwear",
+		"image": "https://sun9-17.userapi.com/impg/HKkkF-I5fg4vsVRh_fuEGd3XP8OPhRN6nSK5Hg/vka6j4fupag.jpg?size=903x1280&quality=96&sign=ccab8daf9ad8b3c4dc1735c81dd1bc3c&c_uniq_tag=qOIT0AQ6hdAuHE_sKjLKniTAce3FgsieQuOFziiMM4c&type=album",		
 		"author": "",
-		"authorlink": "https://twitter.com/Kyopink611",
+		"authorlink": "",
 		"anime": "spy family",
         "character": "yor",
-		"number":"1"
+		"number":"1",
+		"imagelink":"src/assets/pics/Yor01.webp"
 	},
     {
 		"id": "img2",
@@ -18,7 +19,8 @@ export const imagesList =
 		"authorlink": "https://twitter.com/OpalisArt",
 		"anime": "one piece",
         "character": "trafalgar law",
-		"number":"2"
+		"number":"2",
+		"imagelink":"src/assets/pics/Law01.webp"
 	},
     {
 		"id": "img3",
@@ -28,7 +30,8 @@ export const imagesList =
 		"authorlink": "",
 		"anime": "one piece",
         "character": "uta",
-		"number":"3"
+		"number":"3",
+		"imagelink":"src/assets/pics/Uta01.webp"
 	},
     {
 		"id": "img4",
@@ -38,7 +41,8 @@ export const imagesList =
 		"authorlink": "https://twitter.com/minpei1go",
 		"anime": "one piece",
         "character": "nami",
-		"number":"4"
+		"number":"4",
+		"imagelink":"src/assets/pics/Nami01.webp"
 	},
     {
 		"id": "img5",
@@ -48,7 +52,8 @@ export const imagesList =
 		"authorlink": "https://twitter.com/acg2057",
 		"anime": "naruto",
         "character": "hinata",
-		"number":"5"
+		"number":"5",
+		"imagelink":"src/assets/pics/Hinata01.webp"
 	},
     {
 		"id": "img6",
@@ -58,7 +63,8 @@ export const imagesList =
 		"authorlink": "https://twitter.com/Kyopink611",
 		"anime": "one piece",
         "character": "nami",
-		"number":"6"
+		"number":"6",
+		"imagelink":"src/assets/pics/Nami02.webp"
 	},
     {
 		"id": "img7",
@@ -68,7 +74,8 @@ export const imagesList =
 		"authorlink": "https://twitter.com/PinkPawg",
 		"anime": "one piece",
         "character": "robin",
-		"number":"7"
+		"number":"7",
+		"imagelink":"src/assets/pics/Robin01.webp"
 	},
     {
 		"id": "img8",
@@ -78,7 +85,8 @@ export const imagesList =
 		"authorlink": "https://www.deviantart.com/narutorenegado01",
 		"anime": "black clover",
         "character": "mimosa",
-		"number":"8"
+		"number":"8",
+		"imagelink":"src/assets/pics/Mimosa01.webp"
 	},
     {
 		"id": "img9",
@@ -88,7 +96,8 @@ export const imagesList =
 		"authorlink": "https://twitter.com/OpalisArt",
 		"anime": "one piece",
         "character": "reiju",
-		"number":"9"
+		"number":"9",
+		"imagelink":"src/assets/pics/Reiju01.webp"
 	},
     {
 		"id": "img10",
@@ -98,7 +107,8 @@ export const imagesList =
 		"authorlink": "https://twitter.com/Kyopink611",
 		"anime": "one piece",
         "character": "boa hancock",
-		"number":"10"
+		"number":"10",
+		"imagelink":"src/assets/pics/Hancock01.webp"
 	},
     {
 		"id": "img11",
@@ -108,7 +118,8 @@ export const imagesList =
 		"authorlink": "https://hentai20.io/manga/the-hole-is-open/",
 		"anime": "h-manga",
         "character": "aunt",
-		"number":"11"
+		"number":"11",
+		"imagelink":"src/assets/pics/HoleOpen01.webp"
 	},
     {
 		"id": "img12",
@@ -118,7 +129,8 @@ export const imagesList =
 		"authorlink": "https://hanime.tv/videos/hentai/overflow-season-1",
 		"anime": "hanime",
         "character": "kotone akane",
-		"number":"12"
+		"number":"12",
+		"imagelink":"src/assets/pics/Overflow01.webp"
 	},
     {
 		"id": "img13",
@@ -128,7 +140,8 @@ export const imagesList =
 		"authorlink": "https://twitter.com/PinkPawg",
 		"anime": "one piece",
         "character": "nami",
-		"number":"13"
+		"number":"13",
+		"imagelink":"src/assets/pics/Nami03.webp"
 	},
     {
 		"id": "img14",
@@ -138,7 +151,8 @@ export const imagesList =
 		"authorlink": "https://twitter.com/Shinjinou1",
 		"anime": "one piece",
         "character": "yamato",
-		"number":"14"
+		"number":"14",
+		"imagelink":"src/assets/pics/Yamato01.webp"
 	},
     {
 		"id": "img15",
@@ -148,7 +162,8 @@ export const imagesList =
 		"authorlink": "https://twitter.com/Sayanestia",
 		"anime": "one punch man",
         "character": "fubuki tatsumaki",
-		"number":"15"
+		"number":"15",
+		"imagelink":"src/assets/pics/FubukiTatsumaki01.webp"
 	},
     {
 		"id": "img16",
@@ -158,7 +173,8 @@ export const imagesList =
 		"authorlink": "",
 		"anime": "chainsaw-man",
         "character": "makima",
-		"number":"16"
+		"number":"16",
+		"imagelink":"src/assets/pics/Makima01.webp"
 	},
     {
 		"id": "img17",
@@ -168,7 +184,8 @@ export const imagesList =
 		"authorlink": "",
 		"anime": "one piece",
         "character": "robin",
-		"number":"17"
+		"number":"17",
+		"imagelink":"src/assets/pics/Robin02.webp"
 	},
     {
 		"id": "img18",
@@ -178,7 +195,8 @@ export const imagesList =
 		"authorlink": "https://twitter.com/Sayanestia",
 		"anime": "one piece",
         "character": "yamato",
-		"number":"18"
+		"number":"18",
+		"imagelink":"src/assets/pics/Yamato02.webp"
 	},
 	{
 		"id": "img19",
@@ -188,7 +206,8 @@ export const imagesList =
 		"authorlink": "https://twitter.com/OlroxAI",
 		"anime": "one piece",
         "character": "nami",
-		"number":"19"
+		"number":"19",
+		"imagelink":"src/assets/pics/Nami04.webp"
 	},
 	{
 		"id": "img20",
@@ -198,7 +217,8 @@ export const imagesList =
 		"authorlink": "https://twitter.com/OlroxAI",
 		"anime": "one piece",
         "character": "yamato",
-		"number":"20"
+		"number":"20",
+		"imagelink":"src/assets/pics/Yamato03.webp"
 	},
 	{
 		"id": "img21",
@@ -208,7 +228,8 @@ export const imagesList =
 		"authorlink": "https://twitter.com/PinkPawg",
 		"anime": "one piece",
         "character": "vivi",
-		"number":"21"
+		"number":"21",
+		"imagelink":"src/assets/pics/Vivi01.webp"
 	},
 	{
 		"id": "img22",
@@ -218,7 +239,8 @@ export const imagesList =
 		"authorlink": "https://twitter.com/Shiyaku",
 		"anime": "spy family",
         "character": "yor",
-		"number":"22"
+		"number":"22",
+		"imagelink":"src/assets/pics/Yor02.webp"
 	},
 	{
 		"id": "img23",
@@ -228,7 +250,8 @@ export const imagesList =
 		"authorlink": "https://twitter.com/iaJemma",
 		"anime": "one piece",
         "character": "nami",
-		"number":"23"
+		"number":"23",
+		"imagelink":"src/assets/pics/Nami05.webp"
 	},
 	{
 		"id": "img24",
@@ -238,6 +261,7 @@ export const imagesList =
 		"authorlink": "",
 		"anime": "high school dxd",
         "character": "xenovia quarta",
-		"number":"24"
+		"number":"24",
+		"imagelink": "src/assets/pics/Xenovia01.jpg"
 	}
 ]

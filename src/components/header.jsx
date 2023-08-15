@@ -28,7 +28,7 @@ export default function Header()
 
                 <div className='navSecondElement flex flex-row justify-around w-[100%] mt-[5%] gap-[5%]'>
 
-                        <a href="https://www.tiktok.com/@animesaucer_" target='blank' className='tiktokLink flex flex-col'>
+                        <a href="https://www.tiktok.com/@animesaucer2" target='blank' className='tiktokLink flex flex-col'>
                                 <p>Follow me on <span className=' text-purple-500'>Tik Tok</span> !</p>
 
                                 <div className='flex flex-col justify-center items-center mt-[5%]'>
